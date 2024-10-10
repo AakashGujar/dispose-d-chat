@@ -30,7 +30,9 @@ import {
 import { ScrollArea } from "./components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
 
-const socket = io("http://localhost:3000");
+const socket = io(
+  import.meta.env.VITE_BACKEND_URL || "https://your-backend-url.herokuapp.com"
+);
 
 export default function ChatRoom() {
   const [username, setUsername] = useState("");
